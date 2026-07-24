@@ -1,4 +1,5 @@
 import type { Product } from "../types/product";
+import { assetPath } from "../utils/assetPath";
 
 const consultationSpecs = [
   { label: "Dimensions", value: "Custom dimensions available" },
@@ -8,8 +9,8 @@ const consultationSpecs = [
 ];
 
 const image = (file: string, alt: string, page?: number) => ({
-  src: `/assets/catalogue/${file}.webp`,
-  thumb: `/assets/catalogue/${file}-thumb.webp`,
+  src: assetPath(`/assets/catalogue/${file}.webp`),
+  thumb: assetPath(`/assets/catalogue/${file}-thumb.webp`),
   alt,
   cataloguePage: page,
 });

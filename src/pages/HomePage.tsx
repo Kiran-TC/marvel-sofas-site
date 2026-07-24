@@ -12,6 +12,7 @@ import { categories } from "../data/categories";
 import { featuredProducts } from "../data/products";
 import { testimonials } from "../data/testimonials";
 import { useUserStore } from "../store/useUserStore";
+import { assetPath } from "../utils/assetPath";
 
 const trust = [
   { title: "Made to Order", text: "Configurations are discussed around your room, layout and seating needs.", icon: Ruler },
@@ -25,10 +26,10 @@ export default function HomePage() {
 
   return (
     <>
-      <Seo title="Premium Custom Sofas" path="/" image="/assets/projects/factory-sectional-stone-01.webp" />
+      <Seo title="Premium Custom Sofas" path="/" image={assetPath("/assets/projects/factory-sectional-stone-01.webp")} />
       <section className="relative min-h-screen overflow-hidden bg-forest-950 text-white">
         <motion.img
-          src="/assets/projects/factory-sectional-stone-01.webp"
+          src={assetPath("/assets/projects/factory-sectional-stone-01.webp")}
           alt="Marvel Sofa's factory-made stone sectional sofa installation"
           className="absolute inset-0 h-full w-full object-cover opacity-72"
           initial={{ scale: 1.08 }}
@@ -110,8 +111,8 @@ export default function HomePage() {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <img src="/assets/catalogue/material-wall-01.webp" alt="Marvel Sofa's material display from catalogue" className="h-full min-h-96 rounded-lg object-cover" />
-            <img src="/assets/catalogue/quilted-grey-closeup-01.webp" alt="Grey quilted upholstery close-up" className="mt-12 h-full min-h-96 rounded-lg object-cover" />
+            <img src={assetPath("/assets/catalogue/material-wall-01.webp")} alt="Marvel Sofa's material display from catalogue" className="h-full min-h-96 rounded-lg object-cover" />
+            <img src={assetPath("/assets/catalogue/quilted-grey-closeup-01.webp")} alt="Grey quilted upholstery close-up" className="mt-12 h-full min-h-96 rounded-lg object-cover" />
           </div>
         </div>
       </section>
@@ -145,7 +146,7 @@ export default function HomePage() {
       <section className="bg-forest-950 py-20 text-white">
         <div className="luxury-shell">
           <SectionHeading eyebrow="Reviews" title="Sample testimonials ready for replacement." light />
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {testimonials.map((item) => (
               <article key={item.id} className="dark-card p-6">
                 <p className="text-sm text-gold-100">{item.sample ? "Sample testimonial - replace with verified customer review" : "Customer review"}</p>
@@ -158,14 +159,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-ivory py-20">
-        <div className="luxury-shell rounded-lg bg-[url('/assets/brand/contact-card-background.webp')] bg-cover bg-center p-8 text-white shadow-soft lg:p-14">
-          <div className="max-w-2xl">
-            <p className="eyebrow">Custom project</p>
-            <h2 className="mt-3 font-display text-5xl font-semibold">Have a Sofa Designed Around Your Space</h2>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link className="btn-primary" to="/customise">Start Custom Enquiry</Link>
-              <button className="btn-secondary" type="button" onClick={() => openQuote()}>Share Your Requirements on WhatsApp</button>
+      <section className="bg-ivory py-12 sm:py-16 lg:py-20">
+        <div className="luxury-shell">
+          <div className="relative overflow-hidden rounded-lg bg-forest-950 text-white shadow-soft">
+            <img
+              src={assetPath("/assets/projects/factory-sectional-chaise-01.webp")}
+              alt=""
+              className="absolute inset-0 h-full w-full object-cover object-center opacity-72"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-forest-950 via-forest-950/78 to-forest-950/18" />
+            <div className="relative flex min-h-[430px] items-end p-6 sm:min-h-[440px] sm:p-8 lg:min-h-[470px] lg:p-14">
+              <div className="max-w-2xl">
+                <p className="eyebrow">Custom project</p>
+                <h2 className="mt-3 font-display text-4xl font-semibold leading-[0.96] sm:text-5xl lg:text-6xl">Have a Sofa Designed Around Your Space</h2>
+                <p className="mt-4 max-w-xl text-sm leading-6 text-white/72 sm:text-base">
+                  Send measurements, room photos and preferred seating style. The team can continue the quotation conversation on WhatsApp.
+                </p>
+                <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                  <Link className="btn-primary w-full sm:w-auto" to="/customise">Start Custom Enquiry</Link>
+                  <button className="btn-secondary w-full px-5 text-center sm:w-auto" type="button" onClick={() => openQuote()}>Share Requirements on WhatsApp</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

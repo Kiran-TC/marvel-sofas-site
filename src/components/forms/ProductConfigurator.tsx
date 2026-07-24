@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { useUserStore } from "../../store/useUserStore";
+import { assetPath } from "../../utils/assetPath";
 
 const options = {
   sofaType: ["Standard sofa", "L-shaped sofa", "Sectional", "Recliner sofa"],
@@ -66,7 +67,7 @@ export function ProductConfigurator() {
       <aside className="sticky top-28 h-fit rounded-lg bg-forest-950 p-6 text-white shadow-soft">
         <p className="eyebrow">Live summary</p>
         <div className="mt-5 aspect-[4/3] rounded-lg bg-white/10 p-4">
-          <img src="/assets/catalogue/ivory-flared-sofa-01.webp" alt="" className="h-full w-full object-contain" />
+          <img src={assetPath("/assets/catalogue/ivory-flared-sofa-01.webp")} alt="" className="h-full w-full object-contain" />
         </div>
         <dl className="mt-5 space-y-3 text-sm">
           {Object.entries(selected).map(([key, value]) => (

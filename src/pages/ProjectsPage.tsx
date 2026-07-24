@@ -1,10 +1,11 @@
 import { Seo } from "../components/common/Seo";
 import { projectCards } from "../data/projects";
+import { assetPath } from "../utils/assetPath";
 
 export default function ProjectsPage() {
   return (
     <>
-      <Seo title="Projects and Installations" path="/projects" image="/assets/projects/factory-sectional-stone-01.webp" />
+      <Seo title="Projects and Installations" path="/projects" image={assetPath("/assets/projects/factory-sectional-stone-01.webp")} />
       <section className="bg-forest-950 pb-16 pt-32 text-white">
         <div className="luxury-shell">
           <p className="eyebrow">Projects</p>

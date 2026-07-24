@@ -1,3 +1,5 @@
+import { assetPath } from "../utils/assetPath";
+
 export type Testimonial = {
   id: string;
   customerName: string;
@@ -19,7 +21,7 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     sample: true,
     verified: false,
-    image: "/assets/projects/factory-sectional-stone-01.webp",
+    image: assetPath("/assets/projects/factory-sectional-stone-01.webp"),
     text: "Sample testimonial - replace with verified customer review. The custom layout matched our room plan and the team helped us choose a calmer upholstery tone.",
   },
   {
@@ -30,7 +32,7 @@ export const testimonials: Testimonial[] = [
     rating: 4,
     sample: true,
     verified: false,
-    image: "/assets/projects/factory-ivory-recliner-lounge-01.webp",
+    image: assetPath("/assets/projects/factory-ivory-recliner-lounge-01.webp"),
     text: "Sample testimonial - replace with verified customer review. The recliner configuration felt comfortable during selection and the finish direction suited our home.",
   },
   {

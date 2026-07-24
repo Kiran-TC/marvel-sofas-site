@@ -1,6 +1,7 @@
 import { Seo } from "../components/common/Seo";
 import { SectionHeading } from "../components/common/SectionHeading";
 import { business } from "../config/business";
+import { assetPath } from "../utils/assetPath";
 
 export default function AboutPage() {
   const pillars = ["Luxury living", "Timeless design", "Quality modular furniture", "Products built to last", "Practical functions", "High-grade material conversations", "Responsible manufacturing mindset", "Direct manufacturer customisation"];
@@ -18,7 +19,7 @@ export default function AboutPage() {
       </section>
       <section className="bg-ivory py-20">
         <div className="luxury-shell grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-          <img src="/assets/catalogue/material-wall-01.webp" alt="Marvel Sofa's upholstery material display" className="h-full min-h-[520px] rounded-lg object-cover shadow-soft" />
+          <img src={assetPath("/assets/catalogue/material-wall-01.webp")} alt="Marvel Sofa's upholstery material display" className="h-full min-h-[520px] rounded-lg object-cover shadow-soft" />
           <div>
             <SectionHeading eyebrow="Design philosophy" title="Furniture shaped around comfort, proportion and use." />
             <p className="mt-6 leading-8 text-forest-900/68">Marvel Sofa's presents sofas, recliners, dining chairs, beds, headboards and custom furniture as practical luxury pieces. The strongest advantage is direct manufacturer customisation: customers can discuss scale, material direction, seating, finish and room fit before quotation.</p>

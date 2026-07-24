@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { assetPath } from "../../utils/assetPath";
 
 const swatches = [
   { name: "Premium fabric", colour: "#c9b9a5" },
@@ -29,7 +30,7 @@ export function MaterialSwatches() {
         </div>
       </div>
       <div className="relative overflow-hidden rounded-lg bg-forest-950 p-8 shadow-soft">
-        <img src="/assets/catalogue/silver-track-sofa-01.webp" alt="Sofa preview for selected material colour" className="h-full min-h-[360px] w-full object-contain mix-blend-luminosity" />
+        <img src={assetPath("/assets/catalogue/silver-track-sofa-01.webp")} alt="Sofa preview for selected material colour" className="h-full min-h-[360px] w-full object-contain mix-blend-luminosity" />
         <div className="absolute inset-0 opacity-45 mix-blend-multiply" style={{ backgroundColor: selected.colour }} />
         <div className="absolute bottom-5 left-5 rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-forest-950">
           {selected.name}

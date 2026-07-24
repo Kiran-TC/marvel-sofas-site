@@ -1,3 +1,5 @@
+import { assetPath } from "../utils/assetPath";
+
 export const business = {
   brandName: "Marvel Sofa's",
   companyName: "SLV Industry's",
@@ -16,8 +18,8 @@ export const business = {
   address: "EDIT_ADDRESS",
   googleMapsUrl: "EDIT_GOOGLE_MAPS_URL",
   businessHours: "EDIT_BUSINESS_HOURS",
-  catalogueFile: "/assets/documents/slv-industries-marvel-sofas-catalogue.pdf",
-  logo: "/assets/brand/marvel-sofas-logo-card.webp",
+  catalogueFile: assetPath("/assets/documents/slv-industries-marvel-sofas-catalogue.pdf"),
+  logo: assetPath("/assets/brand/marvel-sofas-logo-card.webp"),
   socialLinks: {
     instagram: "EDIT_INSTAGRAM_URL",
     facebook: "EDIT_FACEBOOK_URL",

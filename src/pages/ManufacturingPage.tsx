@@ -1,4 +1,5 @@
 import { Seo } from "../components/common/Seo";
+import { assetPath } from "../utils/assetPath";
 
 const timeline = ["Consultation", "Sketching", "Frame construction", "Support system", "Foam and cushioning", "Upholstery cutting", "Stitching", "Assembly", "Quality inspection", "Packaging and delivery"];
 
@@ -16,7 +17,7 @@ export default function ManufacturingPage() {
       <section className="bg-ivory py-20">
         <div className="luxury-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div className="sticky top-28 h-fit">
-            <img src="/assets/projects/factory-sectional-chaise-01.webp" alt="Factory-made sectional sofa installation" className="rounded-lg shadow-soft" />
+            <img src={assetPath("/assets/projects/factory-sectional-chaise-01.webp")} alt="Factory-made sectional sofa installation" className="rounded-lg shadow-soft" />
           </div>
           <ol className="space-y-5">
             {timeline.map((item, index) => (

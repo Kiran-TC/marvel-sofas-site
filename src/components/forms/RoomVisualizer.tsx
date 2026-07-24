@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { assetPath } from "../../utils/assetPath";
 
 const modes = [
-  { label: "Minimal", className: "from-white to-stonewarm", sofa: "/assets/catalogue/ivory-flared-sofa-01.webp" },
-  { label: "Warm contemporary", className: "from-[#f4dfbd] to-[#8b532d]", sofa: "/assets/catalogue/terracotta-extended-sectional-01.webp" },
-  { label: "Luxury", className: "from-forest-950 to-gold-700", sofa: "/assets/projects/factory-sectional-stone-01.webp" },
-  { label: "Bold modern", className: "from-[#132c4a] to-[#d26a2e]", sofa: "/assets/catalogue/royal-blue-lounge-sofa-01.webp" },
+  { label: "Minimal", className: "from-white to-stonewarm", sofa: assetPath("/assets/catalogue/ivory-flared-sofa-01.webp") },
+  { label: "Warm contemporary", className: "from-[#f4dfbd] to-[#8b532d]", sofa: assetPath("/assets/catalogue/terracotta-extended-sectional-01.webp") },
+  { label: "Luxury", className: "from-forest-950 to-gold-700", sofa: assetPath("/assets/projects/factory-sectional-stone-01.webp") },
+  { label: "Bold modern", className: "from-[#132c4a] to-[#d26a2e]", sofa: assetPath("/assets/catalogue/royal-blue-lounge-sofa-01.webp") },
 ];
 
 export function RoomVisualizer() {
