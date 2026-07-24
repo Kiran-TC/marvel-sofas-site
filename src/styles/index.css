@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --cursor-x: 50vw;
+  --cursor-y: 50vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #faf7ee;
+  color: #111312;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+body.dark-mode {
+  color-scheme: dark;
+  background: #071510;
+  color: #faf7ee;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #dbbf71;
+  outline-offset: 3px;
+}
+
+::selection {
+  background: #b99036;
+  color: #071510;
+}
+
+@layer components {
+  .luxury-shell {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.24em] text-gold-500;
+  }
+
+  .display-heading {
+    @apply font-display text-4xl font-semibold leading-[0.94] text-forest-950 sm:text-5xl lg:text-7xl;
+  }
+
+  .btn-primary {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-forest-950 shadow-gold transition hover:bg-gold-300;
+  }
+
+  .btn-secondary {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:border-gold-300 hover:text-gold-100;
+  }
+
+  .btn-ghost {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-forest-900/10 bg-white/70 px-5 py-2.5 text-sm font-semibold text-forest-900 transition hover:border-gold-500 hover:bg-gold-100;
+  }
+
+  .card {
+    @apply rounded-lg border border-forest-900/10 bg-white shadow-soft;
+  }
+
+  .dark-card {
+    @apply rounded-lg border border-white/10 bg-white/[0.06] shadow-soft backdrop-blur;
+  }
+
+  .input {
+    @apply min-h-12 w-full rounded-lg border border-forest-900/15 bg-white px-4 text-sm text-forest-950 placeholder:text-forest-900/45;
+  }
+
+  .label {
+    @apply text-sm font-semibold text-forest-950;
+  }
+}
+
+.reveal-line {
+  overflow: hidden;
+}
+
+.image-mask {
+  clip-path: inset(0 round 8px);
+}
+
+.compare-grid {
+  grid-template-columns: 180px repeat(var(--compare-count, 1), minmax(180px, 1fr));
+}
+
+@media (pointer: fine) {
+  .luxury-cursor {
+    position: fixed;
+    left: var(--cursor-x);
+    top: var(--cursor-y);
+    z-index: 80;
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+    border: 1px solid rgba(219, 191, 113, 0.72);
+    border-radius: 999px;
+    transform: translate(-50%, -50%);
+    transition: width 180ms ease, height 180ms ease, opacity 180ms ease;
+    opacity: 0.7;
+    mix-blend-mode: difference;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
