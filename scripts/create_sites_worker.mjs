@@ -1,4 +1,24 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { cp, mkdir, readdir, rm, writeFile } from "node:fs/promises";
+
+async function stageClientAssets() {
+  const buildDir = "dist";
+  const clientDir = `${buildDir}/client`;
+  const reservedEntries = new Set([".openai", "client", "server"]);
+
+  await rm(clientDir, { recursive: true, force: true });
+  await mkdir(clientDir, { recursive: true });
+
+  const entries = await readdir(buildDir, { withFileTypes: true });
+  await Promise.all(
+    entries
+      .filter((entry) => !reservedEntries.has(entry.name))
+      .map((entry) =>
+        cp(`${buildDir}/${entry.name}`, `${clientDir}/${entry.name}`, {
+          recursive: true,
+        }),
+      ),
+  );
+}
 
 const worker = `const immutableAssetPattern = /\\\\.[a-fA-F0-9]{8,}\\\\./;
 
@@ -34,5 +54,6 @@ export default {
 };
 `;
 
+await stageClientAssets();
 await mkdir("dist/server", { recursive: true });
 await writeFile("dist/server/index.js", worker, "utf8");
