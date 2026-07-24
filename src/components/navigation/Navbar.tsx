@@ -36,10 +36,11 @@ export function Navbar({ onSearch }: { onSearch: () => void }) {
   return (
     <header className={cn("fixed inset-x-0 top-0 z-50 transition-all duration-300", solid ? "bg-ivory/90 shadow-sm backdrop-blur-xl" : "bg-transparent")}>
       <div className="luxury-shell flex h-20 items-center justify-between gap-4">
-        <Link to="/" className="flex shrink-0 items-center gap-3" aria-label="Marvel Sofa's home">
-          <img src={business.logo} alt="" className="h-11 w-[5.5rem] rounded-md object-cover xl:h-12 xl:w-24" />
-          <span className={cn("hidden whitespace-nowrap font-display text-xl font-semibold leading-none xl:block xl:text-2xl", solid ? "text-forest-950" : "text-white")}>
-            {business.brandName}
+        <Link to="/" className="flex shrink-0 items-center gap-2 sm:gap-3" aria-label="Marvel Sofa's home">
+          <img src={business.logo} alt="" className="h-10 w-[4.8rem] rounded-md object-cover sm:h-11 sm:w-[5.5rem] xl:h-12 xl:w-24" />
+          <span className={cn("block whitespace-nowrap font-display text-xl font-semibold leading-[0.95] sm:text-2xl", solid ? "text-forest-950" : "text-white")}>
+            <span className="block">Marvel</span>
+            <span className="block">Sofa's</span>
           </span>
         </Link>
 
