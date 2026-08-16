@@ -1,21 +1,18 @@
 import type { QuoteFormValues, QuoteResult } from "../types/quote";
-import { buildQuoteMailto, buildWhatsAppMessage, getWhatsAppUrl } from "../utils/whatsapp";
+import { buildQuoteMailto, buildQuoteMessage, getPhoneUrl, getSmsUrl, getWhatsAppUrl } from "../utils/whatsapp";
 
 export const submitQuote = async (values: QuoteFormValues): Promise<QuoteResult> => {
   await new Promise((resolve) => window.setTimeout(resolve, 450));
   const reference = `MS-${Date.now().toString(36).toUpperCase()}`;
 
-  // This project intentionally sends enquiries through WhatsApp and email links.
-  const whatsappMessage = buildWhatsAppMessage({
-    product: { name: values.product, id: values.product },
-    city: values.city,
-    category: values.productCategory,
-    configuration: values.seatingRequirement,
-  });
+  const message = buildQuoteMessage(values, reference);
 
   return {
     reference,
-    whatsappUrl: getWhatsAppUrl(whatsappMessage),
+    message,
+    whatsappUrl: getWhatsAppUrl(message),
+    smsUrl: getSmsUrl(message),
+    phoneUrl: getPhoneUrl(),
     mailtoUrl: buildQuoteMailto(values, reference),
   };
 };

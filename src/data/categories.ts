@@ -27,7 +27,7 @@ export const categories: Category[] = [
     title: "Recliners",
     shortTitle: "Recliners",
     description: "Manual and electric-feel comfort concepts for individual relaxation and media rooms.",
-    image: clientImage("21"),
+    image: assetPath("/assets/catalogue/smoke-fabric-recliner-01.webp"),
     href: "/catalogue/recliners",
     roomTypes: ["Bedroom", "Home theatre", "Lounge"],
   },

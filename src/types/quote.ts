@@ -12,7 +12,7 @@ export type QuoteFormValues = {
   budgetRange?: string;
   quantity: number;
   projectType: "Residential" | "Commercial";
-  preferredContact: "Phone" | "WhatsApp" | "Email";
+  preferredContact: "WhatsApp" | "SMS" | "Phone" | "Email";
   deliveryTimeline?: string;
   additionalNotes?: string;
   consent: boolean;
@@ -20,6 +20,9 @@ export type QuoteFormValues = {
 
 export type QuoteResult = {
   reference: string;
+  message: string;
   whatsappUrl?: string;
+  smsUrl?: string;
+  phoneUrl?: string;
   mailtoUrl?: string;
 };

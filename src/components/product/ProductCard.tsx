@@ -17,15 +17,16 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
   const openQuote = useUserStore((state) => state.openQuote);
   const isFavourite = favourites.includes(product.id);
   const inComparison = comparison.includes(product.id);
+  const isClientPhoto = product.images[0].src.includes("/client-projects/");
 
   return (
     <article className="group card flex h-full flex-col overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-soft">
-      <Link to={`/product/${product.slug}`} className="relative block aspect-[16/11] overflow-hidden bg-gradient-to-br from-ivory via-white to-stonewarm/45 p-2">
+      <Link to={`/product/${product.slug}`} className={cn("relative block aspect-[16/11] overflow-hidden bg-gradient-to-br from-ivory via-white to-stonewarm/45", isClientPhoto ? "p-0" : "p-3")}>
         <img
           src={product.images[0].src}
           alt={product.images[0].alt}
           loading="lazy"
-          className="h-full w-full rounded-md object-contain transition duration-700 group-hover:scale-[1.03]"
+          className={cn("h-full w-full rounded-md transition duration-700 group-hover:scale-[1.03]", isClientPhoto ? "object-cover" : "object-contain")}
         />
         <span className="absolute left-3 top-3 rounded-full bg-forest-950/78 px-3 py-1 text-xs font-semibold text-gold-100 backdrop-blur">
           Price on request

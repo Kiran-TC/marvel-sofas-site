@@ -8,7 +8,7 @@ export default function FaqPage() {
       <section className="bg-forest-950 pb-16 pt-32 text-white">
         <div className="luxury-shell">
           <p className="eyebrow">FAQ</p>
-          <h1 className="mt-4 font-display text-6xl font-semibold">Frequently asked questions.</h1>
+          <h1 className="mt-4 font-display text-5xl font-semibold leading-[0.95] sm:text-6xl">Frequently asked questions.</h1>
         </div>
       </section>
       <section className="bg-ivory py-16">

@@ -21,7 +21,7 @@ export default function ManufacturingPage() {
       <section className="bg-forest-950 pb-16 pt-32 text-white">
         <div className="luxury-shell">
           <p className="eyebrow">Manufacturing</p>
-          <h1 className="mt-4 font-display text-6xl font-semibold">Craftsmanship from requirement to finish.</h1>
+          <h1 className="mt-4 font-display text-5xl font-semibold leading-[0.95] sm:text-6xl">Craftsmanship from requirement to finish.</h1>
           <p className="mt-5 max-w-2xl text-white/70">Every order begins with a room conversation and moves through proportion, comfort, finish and delivery coordination.</p>
         </div>
       </section>

@@ -2,6 +2,7 @@ import { Grid2X2, List, RotateCcw } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Seo } from "../components/common/Seo";
+import { CategoryInspirationStrip } from "../components/catalogue/CategoryInspirationStrip";
 import { FilterSidebar } from "../components/catalogue/FilterSidebar";
 import { MobileFilterSheet } from "../components/catalogue/MobileFilterSheet";
 import { ProductGrid } from "../components/product/ProductGrid";
@@ -33,7 +34,7 @@ export default function CataloguePage() {
       <section className="bg-forest-950 pb-16 pt-32 text-white">
         <div className="luxury-shell">
           <p className="eyebrow">Complete catalogue</p>
-          <h1 className="mt-4 font-display text-6xl font-semibold">{activeCategory?.title ?? "Product Catalogue"}</h1>
+          <h1 className="mt-4 font-display text-5xl font-semibold leading-[0.95] sm:text-6xl">{activeCategory?.title ?? "Product Catalogue"}</h1>
           <p className="mt-5 max-w-2xl text-white/70">
             Browse extracted catalogue references with search, filters, comparison and quote actions. Prices and final specifications are intentionally quotation-based.
           </p>
@@ -56,6 +57,7 @@ export default function CataloguePage() {
               <FilterSidebar filters={filters} setFilters={setFilters} />
             </div>
             <div>
+              <CategoryInspirationStrip category={activeCategory?.id} />
               <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
                 <div>
                   <p className="font-semibold text-forest-950">{filtered.length} products found</p>

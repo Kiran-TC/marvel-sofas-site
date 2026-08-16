@@ -23,7 +23,7 @@ export default function ContactPage() {
       <section className="bg-forest-950 pb-16 pt-32 text-white">
         <div className="luxury-shell">
           <p className="eyebrow">Contact</p>
-          <h1 className="mt-4 font-display text-6xl font-semibold">Request a manufacturing quote.</h1>
+          <h1 className="mt-4 font-display text-5xl font-semibold leading-[0.95] sm:text-6xl">Request a manufacturing quote.</h1>
           <p className="mt-5 max-w-2xl text-white/70">Share your room size, reference images and preferred seating style. The quote conversation can continue directly on WhatsApp.</p>
         </div>
       </section>

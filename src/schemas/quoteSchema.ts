@@ -14,7 +14,7 @@ export const quoteSchema = z.object({
   budgetRange: z.string().optional(),
   quantity: z.number().min(1, "Quantity must be at least 1."),
   projectType: z.enum(["Residential", "Commercial"]),
-  preferredContact: z.enum(["Phone", "WhatsApp", "Email"]),
+  preferredContact: z.enum(["WhatsApp", "SMS", "Phone", "Email"]),
   deliveryTimeline: z.string().optional(),
   additionalNotes: z.string().optional(),
   consent: z.boolean().refine((value) => value, "Please confirm consent before sending the enquiry."),

@@ -9,8 +9,8 @@ export default function CustomisePage() {
       <section className="bg-forest-950 pb-16 pt-32 text-white">
         <div className="luxury-shell">
           <p className="eyebrow">Customise</p>
-          <h1 className="mt-4 font-display text-6xl font-semibold">Design Your Sofa</h1>
-          <p className="mt-5 max-w-2xl text-white/70">Choose layout, seats, upholstery, colour family, arm style, backrest and optional functions before sending a quotation enquiry.</p>
+          <h1 className="mt-4 max-w-[11ch] font-display text-5xl font-semibold leading-[0.95] sm:max-w-2xl sm:text-6xl">Design Your Sofa</h1>
+          <p className="mt-5 max-w-sm text-white/70 sm:max-w-2xl">Choose layout, seats, upholstery, colour family, arm style, backrest and optional functions before sending a quotation enquiry.</p>
         </div>
       </section>
       <section className="bg-ivory py-16">

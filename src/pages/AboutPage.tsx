@@ -12,7 +12,7 @@ export default function AboutPage() {
         <div className="luxury-shell grid gap-10 lg:grid-cols-2 lg:items-end">
           <div>
             <p className="eyebrow">{business.companyName}</p>
-            <h1 className="mt-4 font-display text-6xl font-semibold">A manufacturer-led furniture brand.</h1>
+            <h1 className="mt-4 font-display text-5xl font-semibold leading-[0.95] sm:text-6xl">A manufacturer-led furniture brand.</h1>
           </div>
           <p className="text-lg leading-8 text-white/70">This page turns the catalogue's themes into a grounded brand story without inventing founding years, factory numbers or unsupported claims.</p>
         </div>

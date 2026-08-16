@@ -9,7 +9,7 @@ export default function ReviewsPage() {
       <section className="bg-forest-950 pb-16 pt-32 text-white">
         <div className="luxury-shell">
           <p className="eyebrow">Reviews</p>
-          <h1 className="mt-4 font-display text-6xl font-semibold">Sample testimonial system.</h1>
+          <h1 className="mt-4 font-display text-5xl font-semibold leading-[0.95] sm:text-6xl">Sample testimonial system.</h1>
           <p className="mt-5 max-w-2xl text-white/70">Initial reviews are clearly marked as sample content until real verified reviews are supplied.</p>
         </div>
       </section>

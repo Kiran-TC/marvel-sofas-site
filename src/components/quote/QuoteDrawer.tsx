@@ -26,7 +26,7 @@ export function QuoteDrawer() {
               <div>
                 <p className="eyebrow">Quotation enquiry</p>
                 <h2 className="font-display text-4xl font-semibold text-forest-950">Share the requirement.</h2>
-                <p className="mt-2 text-sm text-forest-900/60">Fill the details once, then send the enquiry through WhatsApp. Email can be enabled when the business email is final.</p>
+                <p className="mt-2 text-sm text-forest-900/60">Fill the details once, then choose WhatsApp, SMS, phone or email for sending the requirement.</p>
               </div>
               <button className="rounded-full p-2 text-forest-950 hover:bg-forest-900/5" type="button" onClick={close} aria-label="Close quote form">
                 <X className="h-5 w-5" />

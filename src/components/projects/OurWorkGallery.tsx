@@ -1,5 +1,5 @@
 import { Maximize2 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ImageLightbox } from "../product/ImageLightbox";
 import { clientProjects, projectImages, type ClientProject } from "../../data/clientProjects";
 
@@ -10,16 +10,24 @@ type OurWorkGalleryProps = {
 
 export function OurWorkGallery({ projects = clientProjects, compact = false }: OurWorkGalleryProps) {
   const [selected, setSelected] = useState<number | null>(null);
+  const initialCount = compact ? 9 : 8;
+  const increment = compact ? 9 : 8;
+  const [visibleCount, setVisibleCount] = useState(initialCount);
+  const visibleProjects = useMemo(() => projects.slice(0, visibleCount), [projects, visibleCount]);
   const images = projects.map((item) => ({
     src: item.image,
     thumb: item.thumb,
     alt: item.alt,
   }));
 
+  useEffect(() => {
+    setVisibleCount(initialCount);
+  }, [initialCount, projects]);
+
   return (
     <>
       <div className={compact ? "columns-1 gap-4 sm:columns-2 lg:columns-3" : "columns-1 gap-4 sm:columns-2 lg:columns-3 xl:columns-4"}>
-        {projects.map((project, index) => (
+        {visibleProjects.map((project, index) => (
           <article
             key={project.id}
             className="mb-4 break-inside-avoid overflow-hidden rounded-lg border border-forest-900/10 bg-white shadow-[0_18px_60px_rgba(7,21,16,0.09)] transition duration-300 hover:-translate-y-1 hover:shadow-soft"
@@ -48,6 +56,14 @@ export function OurWorkGallery({ projects = clientProjects, compact = false }: O
           </article>
         ))}
       </div>
+
+      {visibleCount < projects.length ? (
+        <div className="mt-8 flex justify-center">
+          <button className="btn-primary min-w-48" type="button" onClick={() => setVisibleCount((count) => Math.min(projects.length, count + increment))}>
+            Load more work
+          </button>
+        </div>
+      ) : null}
 
       <ImageLightbox
         open={selected !== null}

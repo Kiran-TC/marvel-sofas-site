@@ -172,7 +172,7 @@ export const products: Product[] = [
     shortDescription: "Warm orange chaise sofa with broad arms and relaxed lounge proportions.",
     description:
       "A statement L-shaped catalogue piece for bold contemporary rooms and custom colour discussions.",
-    images: [image("burnt-orange-chaise-01", "Burnt orange chaise sofa on a white catalogue background", 10)],
+    images: [clientImage("22", "Warm camel chaise sectional sofa with ottoman in a family lounge")],
     features: ["Chaise extension", "Broad arm styling", "Warm colour family", "Custom dimensions"],
     upholsteryOptions: ["Leather finish", "Leatherette", "Premium fabric"],
     colourFamilies: ["Orange", "Brown", "Custom"],
@@ -358,7 +358,7 @@ export const products: Product[] = [
     shortDescription: "A coordinated set of plush recliner chairs shown in neutral and blush tones.",
     description:
       "An individual recliner chair concept for lounge rooms, bedrooms and home theatre seating discussions.",
-    images: [clientImage("21", "Single teal recliner chair in a living room")],
+    images: [image("smoke-fabric-recliner-01", "Smoke grey fabric recliner chair in a styled room", 16)],
     features: ["Individual recliner comfort", "Soft padded back", "Multiple colour directions", "Manual or electric function to confirm"],
     upholsteryOptions: ["Leather finish", "Leatherette", "Premium fabric"],
     colourFamilies: ["Ivory", "Blush", "Neutral"],

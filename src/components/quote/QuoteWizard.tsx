@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ArrowLeft, ArrowRight, CheckCircle2, Send } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Mail, MessageCircle, MessageSquareText, Phone, Send } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { products } from "../../data/products";
@@ -103,28 +103,42 @@ export function QuoteWizard({ productId }: { productId?: string }) {
         <CheckCircle2 className="h-12 w-12 text-gold-500" />
         <h2 className="mt-4 font-display text-4xl font-semibold">Enquiry ready to send.</h2>
         <p className="mt-3 text-forest-900/65">
-          Reference: <span className="font-semibold">{result.reference}</span>. Send this enquiry through WhatsApp now. Email will work as soon as the business email is added.
+          Reference: <span className="font-semibold">{result.reference}</span>. Choose how you want to send the full requirement.
         </p>
-        <div className="mt-6 flex flex-wrap gap-3">
+        <div className="mt-6 grid gap-3 sm:grid-cols-2">
           {result.whatsappUrl ? (
             <a className="btn-primary" href={result.whatsappUrl} target="_blank" rel="noreferrer">
-              Open WhatsApp
+              <MessageCircle className="h-4 w-4" /> Send on WhatsApp
             </a>
           ) : (
             <p className="rounded-lg bg-gold-100 px-4 py-3 text-sm text-gold-700">
               Add the WhatsApp number in src/config/business.ts to enable direct WhatsApp redirection.
             </p>
           )}
+          {result.smsUrl ? (
+            <a className="btn-ghost" href={result.smsUrl}>
+              <MessageSquareText className="h-4 w-4" /> Send by SMS
+            </a>
+          ) : null}
+          {result.phoneUrl ? (
+            <a className="btn-ghost" href={result.phoneUrl}>
+              <Phone className="h-4 w-4" /> Call Now
+            </a>
+          ) : null}
           {result.mailtoUrl ? (
             <a className="btn-ghost" href={result.mailtoUrl}>
-              Send email
+              <Mail className="h-4 w-4" /> Send Email
             </a>
           ) : (
             <p className="rounded-lg border border-forest-900/10 bg-ivory px-4 py-3 text-sm text-forest-900/65">
-              Email enquiry will be enabled once the business email is added.
+              Email sending will appear here once the business email is added.
             </p>
           )}
         </div>
+        <details className="mt-5 rounded-lg bg-forest-900/5 p-4 text-sm text-forest-900/70">
+          <summary className="cursor-pointer font-semibold text-forest-950">Preview message</summary>
+          <pre className="mt-3 max-h-56 overflow-auto whitespace-pre-wrap rounded-md bg-white p-3 font-sans text-xs leading-5">{result.message}</pre>
+        </details>
       </div>
     );
   }
@@ -159,7 +173,7 @@ export function QuoteWizard({ productId }: { productId?: string }) {
             <Field label="Seating requirement"><input className="input" placeholder="Example: 5 seats with chaise" {...register("seatingRequirement")} /></Field>
             <Field label="Quantity" error={errors.quantity?.message}><input className="input" type="number" min={1} {...register("quantity", { valueAsNumber: true })} /></Field>
             <Field label="Residential or commercial"><select className="input" {...register("projectType")}><option>Residential</option><option>Commercial</option></select></Field>
-            <Field label="Preferred contact method"><select className="input" {...register("preferredContact")}><option>WhatsApp</option><option>Phone</option><option>Email</option></select></Field>
+            <Field label="Preferred contact method"><select className="input" {...register("preferredContact")}><option>WhatsApp</option><option>SMS</option><option>Phone</option><option>Email</option></select></Field>
           </div>
         ) : null}
 
@@ -221,7 +235,7 @@ export function QuoteWizard({ productId }: { productId?: string }) {
           </button>
         ) : (
           <button className="btn-primary" type="submit" disabled={isSubmitting}>
-            <Send className="h-4 w-4" /> {isSubmitting ? "Preparing..." : "Prepare WhatsApp enquiry"}
+            <Send className="h-4 w-4" /> {isSubmitting ? "Preparing..." : "Prepare send options"}
           </button>
         )}
       </div>

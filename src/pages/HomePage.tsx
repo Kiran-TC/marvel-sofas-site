@@ -3,13 +3,11 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Seo } from "../components/common/Seo";
 import { SectionHeading } from "../components/common/SectionHeading";
-import { CategoryCard } from "../components/catalogue/CategoryCard";
 import { ProductCard } from "../components/product/ProductCard";
 import { OurWorkGallery } from "../components/projects/OurWorkGallery";
 import { MaterialSwatches } from "../components/forms/MaterialSwatches";
 import { RoomVisualizer } from "../components/forms/RoomVisualizer";
 import { SofaFinder } from "../components/forms/SofaFinder";
-import { categories } from "../data/categories";
 import { clientProjects } from "../data/clientProjects";
 import { featuredProducts } from "../data/products";
 import { useUserStore } from "../store/useUserStore";
@@ -164,15 +162,6 @@ export default function HomePage() {
           </div>
           <div className="mt-10">
             <OurWorkGallery projects={clientProjects} compact />
-          </div>
-        </div>
-      </section>
-
-      <section id="collections" className="bg-ivory py-16 sm:py-20">
-        <div className="luxury-shell">
-          <SectionHeading eyebrow="Featured collections" title="Browse by room, layout and comfort style." description="Choose from living room sofas, sectionals, recliners and accent pieces, then shape the final build around your space." />
-          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {categories.map((category) => <CategoryCard key={category.id} category={category} />)}
           </div>
         </div>
       </section>
