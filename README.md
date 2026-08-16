@@ -30,6 +30,7 @@ npm run test
 - `src/data/products.ts` - local catalogue product data
 - `src/data/categories.ts` - collection cards
 - `src/data/clientProjects.ts` - client-supplied sofa installation gallery data
+- `src/data/categoryInspiration.ts` - credited internet inspiration images for category pages
 - `src/components` - navigation, catalogue, product, quote and form components
 - `src/pages` - route screens
 - `public/assets/catalogue` - cropped catalogue images
@@ -61,15 +62,11 @@ The script generates WebP files and thumbnails and copies the original PDF into 
 
 ## WhatsApp
 
-Set `whatsapp` in `src/config/business.ts`. Until a real number is added, WhatsApp redirects are disabled and the UI shows placeholder guidance.
+The primary WhatsApp number is configured in `src/config/business.ts`. Quote links open WhatsApp with a prefilled requirement summary.
 
 ## Quote Enquiries
 
-The site is intentionally WhatsApp/email-only. `src/services/quoteService.ts` prepares enquiry links from the form details. Customers can attach room/reference photos after WhatsApp or email opens.
-
-## Testimonials
-
-Initial reviews are sample content. Replace `src/data/testimonials.ts` with verified customer reviews and only enable verified badges where the data is truly verified.
+The site is intentionally backend-free for the current budget. `src/services/quoteService.ts` prepares WhatsApp, SMS, phone and email links from the form details. Customers can attach room/reference photos after WhatsApp or email opens.
 
 ## Deployment
 
@@ -83,4 +80,4 @@ Publish the generated `dist` directory. Configure SPA fallback routing to `index
 
 ## Image Ownership
 
-Catalogue, WhatsApp and `public/assets/client-projects` images are assumed to be supplied by Marvel Sofa's / SLV Industry's for this project. No external stock or internet premium images were added in this redesign. Confirm usage rights before public deployment.
+Catalogue, WhatsApp and `public/assets/client-projects` images are assumed to be supplied by Marvel Sofa's / SLV Industry's for this project. External category inspiration images are loaded from Unsplash and credited in `src/data/categoryInspiration.ts`. Confirm usage rights before public deployment.

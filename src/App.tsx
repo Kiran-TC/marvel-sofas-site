@@ -12,7 +12,6 @@ const CustomisePage = lazy(() => import("./pages/CustomisePage"));
 const AboutPage = lazy(() => import("./pages/AboutPage"));
 const ManufacturingPage = lazy(() => import("./pages/ManufacturingPage"));
 const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
-const ReviewsPage = lazy(() => import("./pages/ReviewsPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const FaqPage = lazy(() => import("./pages/FaqPage"));
 const PrivacyPage = lazy(() => import("./pages/PrivacyPage"));
@@ -49,7 +48,6 @@ function App() {
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/manufacturing" element={<ManufacturingPage />} />
                 <Route path="/projects" element={<ProjectsPage />} />
-                <Route path="/reviews" element={<ReviewsPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/faq" element={<FaqPage />} />
                 <Route path="/privacy" element={<PrivacyPage />} />

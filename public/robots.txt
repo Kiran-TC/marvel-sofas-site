@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://kiran-tc.github.io/marvel-sofas-site/sitemap.xml

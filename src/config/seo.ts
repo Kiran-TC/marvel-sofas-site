@@ -6,5 +6,5 @@ export const siteSeo = {
   defaultTitle: "Marvel Sofa's - Custom Sofas by SLV Industry's",
   defaultDescription:
     "Explore premium sofas, recliners, dining chairs, beds, headboards and custom furniture manufactured by SLV Industry's.",
-  canonicalBaseUrl: "https://example.com",
+  canonicalBaseUrl: "https://kiran-tc.github.io/marvel-sofas-site",
 };
