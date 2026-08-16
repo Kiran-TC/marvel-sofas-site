@@ -19,13 +19,13 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
   const inComparison = comparison.includes(product.id);
 
   return (
-    <article className="group card flex h-full flex-col overflow-hidden">
-      <Link to={`/product/${product.slug}`} className="relative block aspect-[4/3] overflow-hidden bg-stonewarm/35">
+    <article className="group card flex h-full flex-col overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-soft">
+      <Link to={`/product/${product.slug}`} className="relative block aspect-[16/11] overflow-hidden bg-gradient-to-br from-ivory via-white to-stonewarm/45 p-2">
         <img
           src={product.images[0].src}
           alt={product.images[0].alt}
           loading="lazy"
-          className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+          className="h-full w-full rounded-md object-contain transition duration-700 group-hover:scale-[1.03]"
         />
         <span className="absolute left-3 top-3 rounded-full bg-forest-950/78 px-3 py-1 text-xs font-semibold text-gold-100 backdrop-blur">
           Price on request

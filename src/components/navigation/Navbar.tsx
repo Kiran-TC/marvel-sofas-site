@@ -82,7 +82,15 @@ export function Navbar({ onSearch }: { onSearch: () => void }) {
           </button>
         </div>
 
-        <button className={cn("rounded-full p-3 lg:hidden", solid ? "text-forest-950" : "text-white")} type="button" onClick={() => setMobileOpen(true)} aria-label="Open menu">
+        <button
+          className={cn(
+            "fixed right-4 top-5 z-[60] rounded-full border p-3 backdrop-blur lg:hidden",
+            solid ? "border-forest-900/10 bg-white/82 text-forest-950 shadow-sm" : "border-white/15 bg-forest-950/42 text-white",
+          )}
+          type="button"
+          onClick={() => setMobileOpen(true)}
+          aria-label="Open menu"
+        >
           <Menu className="h-6 w-6" />
         </button>
       </div>

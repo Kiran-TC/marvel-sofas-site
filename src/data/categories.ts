@@ -1,13 +1,15 @@
 import type { Category } from "../types/product";
 import { assetPath } from "../utils/assetPath";
 
+const clientImage = (id: string) => assetPath(`/assets/client-projects/marvel-installation-${id}.webp`);
+
 export const categories: Category[] = [
   {
     id: "living-room-sofas",
     title: "Living Room Sofas",
     shortTitle: "Sofas",
     description: "Comfort-led seating for everyday living rooms, formal lounges and family spaces.",
-    image: assetPath("/assets/catalogue/blue-horizon-sofa-01.webp"),
+    image: clientImage("31"),
     href: "/catalogue/living-room-sofas",
     roomTypes: ["Living room", "Apartment", "Villa"],
   },
@@ -16,7 +18,7 @@ export const categories: Category[] = [
     title: "L-Shaped & Sectional Sofas",
     shortTitle: "Sectionals",
     description: "Extended lounge layouts with chaise, corner and modular options for large rooms.",
-    image: assetPath("/assets/projects/factory-sectional-stone-01.webp"),
+    image: clientImage("20"),
     href: "/catalogue/l-shaped-sofas",
     roomTypes: ["Living room", "Villa", "Home theatre"],
   },
@@ -25,7 +27,7 @@ export const categories: Category[] = [
     title: "Recliners",
     shortTitle: "Recliners",
     description: "Manual and electric-feel comfort concepts for individual relaxation and media rooms.",
-    image: assetPath("/assets/catalogue/azure-recliner-chair-01.webp"),
+    image: clientImage("21"),
     href: "/catalogue/recliners",
     roomTypes: ["Bedroom", "Home theatre", "Lounge"],
   },
@@ -34,7 +36,7 @@ export const categories: Category[] = [
     title: "Accent & Lounge Chairs",
     shortTitle: "Accent Chairs",
     description: "Statement chairs, wing chairs and compact lounge pieces for layered interiors.",
-    image: assetPath("/assets/catalogue/cognac-wing-chair-01.webp"),
+    image: clientImage("15"),
     href: "/catalogue/accent-lounge-chairs",
     roomTypes: ["Living room", "Bedroom", "Office"],
   },

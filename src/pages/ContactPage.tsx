@@ -9,13 +9,13 @@ export default function ContactPage() {
       icon: Phone,
       label: "Phone",
       value: isPlaceholderContact(business.phone)
-        ? "Phone placeholder"
+        ? "Phone enquiry"
         : [business.phoneDisplay, ...business.alternatePhones.map((item) => item.display)].join(" | "),
     },
-    { icon: MessageCircle, label: "WhatsApp", value: isPlaceholderContact(business.whatsapp) ? "WhatsApp placeholder" : business.whatsappDisplay },
-    { icon: Mail, label: "Email", value: isPlaceholderContact(business.email) ? "Email placeholder" : business.email },
-    { icon: MapPin, label: "Address", value: isPlaceholderContact(business.address) ? "Address placeholder" : business.address },
-  ];
+    { icon: MessageCircle, label: "WhatsApp", value: isPlaceholderContact(business.whatsapp) ? "WhatsApp enquiry" : business.whatsappDisplay },
+    ...(!isPlaceholderContact(business.email) ? [{ icon: Mail, label: "Email", value: business.email }] : []),
+    ...(!isPlaceholderContact(business.address) ? [{ icon: MapPin, label: "Address", value: business.address }] : []),
+  ].filter((item) => !item.value.toLowerCase().includes("placeholder"));
 
   return (
     <>
@@ -24,7 +24,7 @@ export default function ContactPage() {
         <div className="luxury-shell">
           <p className="eyebrow">Contact</p>
           <h1 className="mt-4 font-display text-6xl font-semibold">Request a manufacturing quote.</h1>
-          <p className="mt-5 max-w-2xl text-white/70">All contact fields are editable in the central business configuration file.</p>
+          <p className="mt-5 max-w-2xl text-white/70">Share your room size, reference images and preferred seating style. The quote conversation can continue directly on WhatsApp.</p>
         </div>
       </section>
       <section className="bg-ivory py-16">

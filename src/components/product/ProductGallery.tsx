@@ -21,8 +21,8 @@ export function ProductGallery({ images, productName }: { images: ProductImage[]
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex">
             {images.map((image, index) => (
-              <button key={image.src} type="button" className="min-w-0 flex-[0_0_100%]" onClick={() => setLightboxOpen(true)} aria-label={`Open ${productName} image ${index + 1}`}>
-                <img src={image.src} alt={image.alt} className="aspect-[4/3] w-full object-cover" />
+              <button key={image.src} type="button" className="min-w-0 flex-[0_0_100%] bg-gradient-to-br from-ivory via-white to-stonewarm/45 p-2" onClick={() => setLightboxOpen(true)} aria-label={`Open ${productName} image ${index + 1}`}>
+                <img src={image.src} alt={image.alt} className="aspect-[4/3] w-full rounded-md object-contain" />
               </button>
             ))}
           </div>
@@ -47,8 +47,8 @@ export function ProductGallery({ images, productName }: { images: ProductImage[]
       </div>
       <div className="mt-3 grid grid-cols-4 gap-3">
         {images.map((image, index) => (
-          <button key={image.src} className={`overflow-hidden rounded-md border ${selected === index ? "border-gold-500" : "border-transparent"}`} type="button" onClick={() => goTo(index)}>
-            <img src={image.thumb ?? image.src} alt="" className="aspect-[4/3] w-full object-cover" />
+          <button key={image.src} className={`overflow-hidden rounded-md border bg-white p-1 ${selected === index ? "border-gold-500" : "border-transparent"}`} type="button" onClick={() => goTo(index)}>
+            <img src={image.thumb ?? image.src} alt="" className="aspect-[4/3] w-full object-contain" />
           </button>
         ))}
       </div>

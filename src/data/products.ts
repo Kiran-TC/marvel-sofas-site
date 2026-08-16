@@ -15,6 +15,12 @@ const image = (file: string, alt: string, page?: number) => ({
   cataloguePage: page,
 });
 
+const clientImage = (id: string, alt: string) => ({
+  src: assetPath(`/assets/client-projects/marvel-installation-${id}.webp`),
+  thumb: assetPath(`/assets/client-projects/marvel-installation-${id}-thumb.webp`),
+  alt,
+});
+
 export const products: Product[] = [
   {
     id: "MS-CAT-006",
@@ -26,7 +32,7 @@ export const products: Product[] = [
     shortDescription: "Low-profile blue sofa with broad arms and a relaxed modern silhouette.",
     description:
       "A generous living-room sofa concept from the catalogue, suitable for clean contemporary spaces and custom upholstery conversations.",
-    images: [image("blue-horizon-sofa-01", "Blue living room sofa in a modern interior", 6)],
+    images: [clientImage("27", "Blue living room sofa set with matching ottomans")],
     features: ["Wide lounge profile", "Adjustable headrest styling", "Slim metal leg detail", "Custom upholstery conversation"],
     upholsteryOptions: ["Premium fabric", "Leather or leatherette", "Textured upholstery"],
     colourFamilies: ["Blue", "Neutral", "Custom"],
@@ -73,7 +79,7 @@ export const products: Product[] = [
     shortDescription: "Long silver-grey sofa with a linear wooden base and soft loose cushions.",
     description:
       "A refined catalogue sofa with a long horizontal stance, ideal for calm living rooms and hospitality lounges.",
-    images: [image("silver-track-sofa-01", "Silver grey three seater sofa with slim wood base", 8)],
+    images: [clientImage("08", "Silver grey three seater sofa in a finished room")],
     features: ["Three-seat layout", "Soft cushion back", "Wood base accent", "Neutral interior fit"],
     upholsteryOptions: ["Premium fabric", "Textured upholstery", "Neutral tones"],
     colourFamilies: ["Grey", "Ivory", "Neutral"],
@@ -96,7 +102,7 @@ export const products: Product[] = [
     shortDescription: "A warm terracotta sectional with extended chaise-style seating at both ends.",
     description:
       "A bold lounge-ready sectional concept for wide rooms, villa lounges and statement interiors.",
-    images: [image("terracotta-extended-sectional-01", "Terracotta sectional sofa in a warm living room", 8)],
+    images: [clientImage("07", "Terracotta sectional sofa arranged in a living room")],
     features: ["Extended seating", "Warm statement colour", "Sectional layout", "Made to order"],
     upholsteryOptions: ["Leather finish", "Leatherette", "Premium fabric"],
     colourFamilies: ["Orange", "Brown", "Custom"],
@@ -119,7 +125,7 @@ export const products: Product[] = [
     shortDescription: "Amber modular chaise system with generous blocks and movable ottoman styling.",
     description:
       "A modular lounge concept that can be discussed for corner layouts, chaise placement and tailored upholstery.",
-    images: [image("amber-modular-chaise-01", "Amber modular chaise sofa with ottoman style section", 9)],
+    images: [clientImage("12", "Amber modular chaise sofa in a bright living room")],
     features: ["Modular block seating", "Chaise option", "Soft cushion back", "Custom configuration"],
     upholsteryOptions: ["Velvet", "Premium fabric", "Textured upholstery"],
     colourFamilies: ["Yellow", "Gold", "Custom"],
@@ -143,7 +149,7 @@ export const products: Product[] = [
     shortDescription: "Blue-grey L-shaped sofa with adjustable headrest styling and a long chaise.",
     description:
       "A calm sectional option for living rooms that need extra seating without a heavy visual footprint.",
-    images: [image("mist-sectional-chaise-01", "Blue grey L-shaped sectional sofa with chaise", 9)],
+    images: [clientImage("20", "Blue grey L-shaped sectional sofa with chaise in a home")],
     features: ["L-shaped layout", "Long chaise", "Adjustable headrest look", "Slim leg profile"],
     upholsteryOptions: ["Leather finish", "Leatherette", "Premium fabric"],
     colourFamilies: ["Blue", "Grey", "Neutral"],
@@ -213,7 +219,7 @@ export const products: Product[] = [
     shortDescription: "Ivory sofa with console-style side detailing and clean modern upholstery.",
     description:
       "A premium catalogue sofa with a practical console impression, suitable for formal living rooms and family lounges.",
-    images: [image("ivory-console-sofa-01", "Ivory sofa with console-style side details", 11)],
+    images: [clientImage("01", "Ivory sofa with console-style side details")],
     features: ["Console-style detail", "High back comfort", "Ivory upholstery", "Made-to-order sizing"],
     upholsteryOptions: ["Leather finish", "Leatherette", "Premium fabric"],
     colourFamilies: ["Ivory", "Neutral", "Custom"],
@@ -305,7 +311,7 @@ export const products: Product[] = [
     shortDescription: "Large slate sectional with multiple lounge modules for home-theatre style comfort.",
     description:
       "A substantial modular seating concept for larger rooms where the layout can be tuned around the space.",
-    images: [image("slate-modular-theatre-01", "Large slate modular sectional sofa in a lounge", 14)],
+    images: [clientImage("09", "Large slate modular sectional sofa in a formal lounge")],
     features: ["Large modular layout", "Multiple seats", "Deep lounge modules", "Custom room planning"],
     upholsteryOptions: ["Leather finish", "Leatherette", "Textured upholstery"],
     colourFamilies: ["Grey", "Black", "Neutral"],
@@ -352,7 +358,7 @@ export const products: Product[] = [
     shortDescription: "A coordinated set of plush recliner chairs shown in neutral and blush tones.",
     description:
       "An individual recliner chair concept for lounge rooms, bedrooms and home theatre seating discussions.",
-    images: [image("recliner-chair-set-01", "Set of recliner chairs in neutral and blush colours", 16)],
+    images: [clientImage("21", "Single teal recliner chair in a living room")],
     features: ["Individual recliner comfort", "Soft padded back", "Multiple colour directions", "Manual or electric function to confirm"],
     upholsteryOptions: ["Leather finish", "Leatherette", "Premium fabric"],
     colourFamilies: ["Ivory", "Blush", "Neutral"],
@@ -539,7 +545,7 @@ export const products: Product[] = [
     shortDescription: "Deep royal blue sofa with a relaxed, tufted lounge seat and soft cushions.",
     description:
       "A vivid lounge sofa concept for customers seeking a bold colour family and soft everyday comfort.",
-    images: [image("royal-blue-lounge-sofa-01", "Royal blue lounge sofa in a bright interior", 29)],
+    images: [clientImage("27", "Royal blue sofa set in a bright living room")],
     features: ["Deep blue upholstery", "Soft cushion styling", "Tufted seat look", "Custom upholstery"],
     upholsteryOptions: ["Velvet", "Premium fabric", "Textured upholstery"],
     colourFamilies: ["Blue", "Custom"],

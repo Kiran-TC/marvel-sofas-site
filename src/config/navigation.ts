@@ -4,10 +4,10 @@ export const primaryNavigation = [
   { label: "Home", href: "/" },
   { label: "Catalogue", href: "/catalogue" },
   { label: "Collections", href: "/catalogue", hasMegaMenu: true },
+  { label: "Our Work", href: "/projects" },
   { label: "Customise", href: "/customise" },
   { label: "Manufacturing", href: "/manufacturing" },
   { label: "About", href: "/about" },
-  { label: "Reviews", href: "/reviews" },
   { label: "Contact", href: "/contact" },
 ];
 

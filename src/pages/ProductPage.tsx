@@ -61,7 +61,6 @@ export default function ProductPage() {
             <aside className="lg:sticky lg:top-28 lg:h-fit">
               <p className="eyebrow">{product.subcategory}</p>
               <h1 className="mt-3 font-display text-4xl font-semibold leading-tight text-forest-950 sm:text-5xl">{product.name}</h1>
-              {product.marketingNameEditable ? <p className="mt-2 text-xs text-forest-900/50">Editable marketing name - replace if an official model name is supplied.</p> : null}
               <p className="mt-5 text-lg leading-8 text-forest-900/68">{product.description}</p>
               <p className="mt-5 rounded-lg bg-gold-100 px-4 py-3 text-sm font-semibold text-gold-700">Price available on request</p>
               <div className="mt-6 grid gap-3">
@@ -71,7 +70,7 @@ export default function ProductPage() {
               </div>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 <button className="btn-primary" type="button" onClick={() => openQuote(product.id)}>Request Quote</button>
-                {whatsappUrl ? <a className="btn-ghost" href={whatsappUrl} target="_blank" rel="noreferrer"><MessageCircle className="h-4 w-4" /> WhatsApp enquiry</a> : <button className="btn-ghost" type="button" title="Add WhatsApp number in business config"><MessageCircle className="h-4 w-4" /> WhatsApp placeholder</button>}
+                {whatsappUrl ? <a className="btn-ghost" href={whatsappUrl} target="_blank" rel="noreferrer"><MessageCircle className="h-4 w-4" /> WhatsApp enquiry</a> : <Link className="btn-ghost" to="/contact"><MessageCircle className="h-4 w-4" /> Contact team</Link>}
                 <a className="btn-ghost" href={isPlaceholderContact(business.phone) ? "/contact" : `tel:${business.phone}`}><Phone className="h-4 w-4" /> Phone enquiry</a>
                 <a className="btn-ghost" href={business.catalogueFile}><Share2 className="h-4 w-4" /> View catalogue</a>
               </div>

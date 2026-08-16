@@ -1,31 +1,48 @@
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Seo } from "../components/common/Seo";
-import { projectCards } from "../data/projects";
+import { SectionHeading } from "../components/common/SectionHeading";
+import { OurWorkGallery } from "../components/projects/OurWorkGallery";
+import { clientProjects, featuredClientProjects } from "../data/clientProjects";
 import { assetPath } from "../utils/assetPath";
 
 export default function ProjectsPage() {
+  const heroProject = featuredClientProjects[0] ?? clientProjects[0];
+
   return (
     <>
-      <Seo title="Projects and Installations" path="/projects" image={assetPath("/assets/projects/factory-sectional-stone-01.webp")} />
-      <section className="bg-forest-950 pb-16 pt-32 text-white">
-        <div className="luxury-shell">
-          <p className="eyebrow">Projects</p>
-          <h1 className="mt-4 font-display text-6xl font-semibold">Real project visuals and labelled concepts.</h1>
-          <p className="mt-5 max-w-2xl text-white/70">Cards using supplied WhatsApp images are marked as factory-made project images. Other cards remain labelled as concepts until verified client details are supplied.</p>
+      <Seo title="Our Work" path="/projects" image={assetPath("/assets/client-projects/marvel-installation-31.webp")} />
+      <section className="relative isolate overflow-hidden bg-forest-950 pb-16 pt-32 text-white sm:pb-20">
+        <img src={heroProject.image} alt="" className="absolute inset-0 h-full w-full object-cover object-[50%_58%] opacity-42" />
+        <div className="absolute inset-0 bg-gradient-to-r from-forest-950 via-forest-950/86 to-forest-950/24" />
+        <div className="luxury-shell relative">
+          <p className="eyebrow text-gold-300">Our Work</p>
+          <h1 className="mt-4 max-w-4xl font-display text-5xl font-semibold leading-[0.92] sm:text-7xl">
+            Finished sofa installations, ready for your room conversation.
+          </h1>
+          <p className="mt-6 max-w-2xl text-base leading-8 text-white/72">
+            Explore real Marvel Sofa's lounges across neutral sectionals, bold colour stories, recliner seating and formal living rooms.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link className="btn-primary" to="/customise">
+              Start Custom Enquiry <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link className="btn-secondary" to="/catalogue">
+              Browse Catalogue
+            </Link>
+          </div>
         </div>
       </section>
-      <section className="bg-ivory py-16">
-        <div className="luxury-shell grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {projectCards.map((project) => (
-            <article key={project.id} className="card overflow-hidden">
-              <img src={project.image} alt={project.title} className="aspect-[4/3] w-full object-cover" />
-              <div className="p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-500">{project.label}</p>
-                <h2 className="mt-2 font-display text-3xl font-semibold text-forest-950">{project.title}</h2>
-                <p className="mt-1 text-sm font-semibold text-forest-900/55">{project.type}</p>
-                <p className="mt-3 text-sm leading-6 text-forest-900/65">{project.description}</p>
-              </div>
-            </article>
-          ))}
+      <section className="bg-ivory py-16 sm:py-20">
+        <div className="luxury-shell">
+          <SectionHeading
+            eyebrow="Gallery"
+            title="A complete look at recent sofa references."
+            description="Every room has a different wall length, light level and seating habit. These references make it easier to discuss proportion, colour and comfort before production."
+          />
+          <div className="mt-10">
+            <OurWorkGallery projects={clientProjects} />
+          </div>
         </div>
       </section>
     </>

@@ -2,12 +2,12 @@ export const faqs = [
   {
     question: "Can Marvel Sofa's manufacture custom dimensions?",
     answer:
-      "Yes, the site uses custom-dimension placeholders because final dimensions are confirmed during consultation and measurement review.",
+      "Yes. Final dimensions can be discussed during consultation after room measurements, wall lengths, access and seating requirements are reviewed.",
   },
   {
-    question: "Are catalogue product names official model names?",
+    question: "Can I use a catalogue sofa as a reference?",
     answer:
-      "Only catalogue-supplied names should be treated as official. The current product names are editable marketing names created to make the website easier to browse.",
+      "Yes. Catalogue and project references can be used as a starting point, then adjusted for colour, upholstery, layout and room size.",
   },
   {
     question: "Why are prices not displayed?",

@@ -10,7 +10,7 @@ export function Footer() {
         <div>
           <img src={business.logo} alt={`${business.brandName} logo`} className="h-20 w-40 rounded-lg object-cover" />
           <p className="mt-6 max-w-sm text-sm leading-7 text-white/68">
-            Premium sofa and custom furniture manufacturing by SLV Industry's. Product names, contact details and testimonials are editable placeholders where source data is not supplied.
+            Premium sofas, sectionals and custom furniture manufactured by SLV Industry's for homes that need comfort with a polished finish.
           </p>
           <Link className="btn-primary mt-6" to="/contact">
             Request a Quote <ArrowUpRight className="h-4 w-4" />
@@ -31,10 +31,15 @@ export function Footer() {
         <div>
           <h3 className="font-semibold text-gold-100">Company</h3>
           <ul className="mt-4 space-y-3 text-sm text-white/68">
-            {["About", "Manufacturing", "Projects", "Reviews", "FAQ", "Privacy", "Terms"].map((item) => (
-              <li key={item}>
-                <Link className="hover:text-gold-100" to={`/${item.toLowerCase() === "faq" ? "faq" : item.toLowerCase()}`}>
-                  {item}
+            {[
+              ["About", "/about"],
+              ["Manufacturing", "/manufacturing"],
+              ["Our Work", "/projects"],
+              ["FAQ", "/faq"],
+            ].map(([label, href]) => (
+              <li key={href}>
+                <Link className="hover:text-gold-100" to={href}>
+                  {label}
                 </Link>
               </li>
             ))}
@@ -46,7 +51,7 @@ export function Footer() {
             <p className="flex gap-3">
               <Phone className="mt-1 h-4 w-4 text-gold-300" />
               <span>
-                {isPlaceholderContact(business.phone) ? "Phone placeholder" : business.phoneDisplay}
+                {isPlaceholderContact(business.phone) ? "Phone enquiry" : business.phoneDisplay}
                 {business.alternatePhones.map((item) => (
                   <span key={item.phone} className="block">
                     {item.display}
@@ -54,19 +59,23 @@ export function Footer() {
                 ))}
               </span>
             </p>
-            <p className="flex gap-3">
-              <Mail className="mt-1 h-4 w-4 text-gold-300" /> {isPlaceholderContact(business.email) ? "Email placeholder" : business.email}
-            </p>
-            <p className="flex gap-3">
-              <MapPin className="mt-1 h-4 w-4 text-gold-300" /> {isPlaceholderContact(business.address) ? "Address placeholder" : business.address}
-            </p>
-            <p>Business hours: {isPlaceholderContact(business.businessHours) ? "Placeholder" : business.businessHours}</p>
+            {!isPlaceholderContact(business.email) ? (
+              <p className="flex gap-3">
+                <Mail className="mt-1 h-4 w-4 text-gold-300" /> {business.email}
+              </p>
+            ) : null}
+            {!isPlaceholderContact(business.address) ? (
+              <p className="flex gap-3">
+                <MapPin className="mt-1 h-4 w-4 text-gold-300" /> {business.address}
+              </p>
+            ) : null}
+            {!isPlaceholderContact(business.businessHours) ? <p>Business hours: {business.businessHours}</p> : null}
           </div>
         </div>
       </div>
       <div className="border-t border-white/10 py-5">
         <div className="luxury-shell flex flex-col gap-3 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
-          <p>Copyright {new Date().getFullYear()} {business.brandName}. Editable business information is kept in src/config/business.ts.</p>
+          <p>Copyright {new Date().getFullYear()} {business.brandName}. Crafted for custom sofa enquiries.</p>
           <a href={business.catalogueFile} className="hover:text-gold-100">
             View catalogue PDF
           </a>

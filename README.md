@@ -1,6 +1,6 @@
 # Marvel Sofa's Website
 
-Premium React/Vite website for Marvel Sofa's by SLV Industry's. It uses the supplied PDF catalogue as the source for product imagery and keeps all unsupported business details as editable placeholders.
+Premium React/Vite website for Marvel Sofa's by SLV Industry's. It uses the supplied PDF catalogue and client-supplied project photos as the source for product and installation imagery.
 
 ## Technology Stack
 
@@ -29,10 +29,12 @@ npm run test
 - `src/config/business.ts` - editable company, phone, WhatsApp, email, address and catalogue settings
 - `src/data/products.ts` - local catalogue product data
 - `src/data/categories.ts` - collection cards
+- `src/data/clientProjects.ts` - client-supplied sofa installation gallery data
 - `src/components` - navigation, catalogue, product, quote and form components
 - `src/pages` - route screens
 - `public/assets/catalogue` - cropped catalogue images
 - `public/assets/projects` - supplied real project/factory images
+- `public/assets/client-projects` - supplied Marvel Sofa's installation images and thumbnails
 - `scripts/extract_catalogue_assets.py` - repeatable PDF/image extraction process
 
 ## Updating Company Information
@@ -81,4 +83,4 @@ Publish the generated `dist` directory. Configure SPA fallback routing to `index
 
 ## Image Ownership
 
-Catalogue and WhatsApp images are assumed to be supplied by Marvel Sofa's / SLV Industry's for this project. Confirm usage rights before public deployment.
+Catalogue, WhatsApp and `public/assets/client-projects` images are assumed to be supplied by Marvel Sofa's / SLV Industry's for this project. No external stock or internet premium images were added in this redesign. Confirm usage rights before public deployment.
