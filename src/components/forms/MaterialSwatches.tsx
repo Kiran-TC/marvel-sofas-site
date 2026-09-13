@@ -30,14 +30,14 @@ export function MaterialSwatches() {
               type="button"
               onClick={() => setSelected(swatch)}
             >
-              <span className="h-8 w-8 rounded-full border border-forest-900/10" style={{ backgroundColor: swatch.colour }} />
+              <span className="h-8 w-8 shrink-0 rounded-full border border-forest-900/10" style={{ backgroundColor: swatch.colour }} />
               {swatch.name}
             </button>
           ))}
         </div>
       </div>
       <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-white via-ivory to-stonewarm/60 p-5 shadow-soft sm:p-8">
-        <div className="flex min-h-[340px] items-center justify-center rounded-md border border-forest-900/8 bg-white sm:min-h-[430px]">
+        <div className="flex min-h-[220px] items-center justify-center rounded-md border border-forest-900/8 bg-white sm:min-h-[430px]">
           <img
             src={previewImage}
             alt={`${selected.name} sofa colour preview`}

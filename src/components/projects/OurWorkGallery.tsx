@@ -10,8 +10,8 @@ type OurWorkGalleryProps = {
 
 export function OurWorkGallery({ projects = clientProjects, compact = false }: OurWorkGalleryProps) {
   const [selected, setSelected] = useState<number | null>(null);
-  const initialCount = compact ? 9 : 8;
-  const increment = compact ? 9 : 8;
+  const initialCount = compact ? 4 : 8;
+  const increment = compact ? 4 : 8;
   const [visibleCount, setVisibleCount] = useState(initialCount);
   const visibleProjects = useMemo(() => projects.slice(0, visibleCount), [projects, visibleCount]);
   const images = projects.map((item) => ({
@@ -26,7 +26,7 @@ export function OurWorkGallery({ projects = clientProjects, compact = false }: O
 
   return (
     <>
-      <div className={compact ? "columns-1 gap-4 sm:columns-2 lg:columns-3" : "columns-1 gap-4 sm:columns-2 lg:columns-3 xl:columns-4"}>
+      <div className={compact ? "columns-2 gap-3 sm:gap-4 lg:columns-3" : "columns-2 gap-3 sm:gap-4 lg:columns-3 xl:columns-4"}>
         {visibleProjects.map((project, index) => (
           <article
             key={project.id}
@@ -48,9 +48,9 @@ export function OurWorkGallery({ projects = clientProjects, compact = false }: O
                 <Maximize2 className="h-4 w-4" />
               </span>
             </button>
-            <div className="p-4">
+            <div className="p-3 sm:p-4">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-700">{project.mood}</p>
-              <h3 className="mt-2 font-display text-2xl font-semibold leading-tight text-forest-950">{project.title}</h3>
+              <h3 className="mt-2 font-display text-xl sm:text-2xl font-semibold leading-tight text-forest-950">{project.title}</h3>
               <p className="mt-1 text-sm text-forest-900/58">{project.room}</p>
             </div>
           </article>

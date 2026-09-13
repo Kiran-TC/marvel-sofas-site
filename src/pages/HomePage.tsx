@@ -55,7 +55,7 @@ export default function HomePage() {
   const openQuote = useUserStore((state) => state.openQuote);
 
   return (
-    <>
+    <div className="home-page">
       <Seo title="Premium Custom Sofas" path="/" image={clientImage("31")} />
       <section className="relative isolate overflow-hidden bg-forest-950 text-white">
         <motion.img
@@ -68,8 +68,8 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,21,16,0.96)_0%,rgba(7,21,16,0.8)_38%,rgba(7,21,16,0.32)_72%,rgba(7,21,16,0.08)_100%)]" />
         <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-forest-950 to-transparent" />
-        <div className="luxury-shell relative flex min-h-[88svh] items-end pb-10 pt-32 sm:pb-14 lg:pb-16">
-          <div className="w-[calc(100vw-2rem)] max-w-[22rem] sm:w-auto sm:max-w-4xl">
+        <div className="luxury-shell relative flex min-h-0 items-end pb-8 pt-24 sm:min-h-[88svh] sm:pt-32 sm:pb-14 lg:pb-16">
+          <div className="w-full max-w-[22rem] sm:w-auto sm:max-w-4xl">
             <motion.p className="eyebrow text-gold-300" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
               Marvel Sofa's by SLV Industry's
             </motion.p>
@@ -87,7 +87,7 @@ export default function HomePage() {
                 WhatsApp Quote
               </button>
             </motion.div>
-            <motion.div className="mt-10 grid max-w-3xl gap-3 sm:grid-cols-3" initial={{ y: 24, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.42 }}>
+            <motion.div className="mt-6 sm:mt-10 grid max-w-3xl gap-3 grid-cols-3" initial={{ y: 24, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.42 }}>
               {stats.map(([value, label]) => (
                 <div key={value} className="border-l border-gold-300/55 pl-4">
                   <p className="font-display text-3xl font-semibold text-white">{value}</p>
@@ -99,10 +99,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-ivory py-10 sm:py-12">
-        <div className="luxury-shell grid gap-3 md:grid-cols-4">
+      <section className="home-trust bg-ivory py-10 sm:py-12">
+        <div className="luxury-shell grid grid-cols-2 gap-3 md:grid-cols-4">
           {trust.map(({ title, text, icon: Icon }) => (
-            <div key={title} className="rounded-lg border border-forest-900/10 bg-white p-5 shadow-[0_16px_48px_rgba(7,21,16,0.06)]">
+            <div key={title} className="rounded-lg border border-forest-900/10 bg-white p-3 sm:p-5 shadow-[0_16px_48px_rgba(7,21,16,0.06)]">
               <Icon className="h-7 w-7 text-gold-500" />
               <h2 className="mt-4 font-semibold text-forest-950">{title}</h2>
               <p className="mt-2 text-sm leading-6 text-forest-900/62">{text}</p>
@@ -111,7 +111,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-white py-16 sm:py-20">
+      <section className="home-installations bg-white py-16 sm:py-20">
         <div className="luxury-shell">
           <div className="grid gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-end">
             <SectionHeading
@@ -124,7 +124,7 @@ export default function HomePage() {
             </p>
           </div>
           <div className="mt-10 grid gap-4 lg:grid-cols-12">
-            <article className="group relative min-h-[440px] overflow-hidden rounded-lg bg-forest-950 text-white shadow-soft lg:col-span-7">
+            <article className="group relative min-h-[260px] sm:min-h-[440px] overflow-hidden rounded-lg bg-forest-950 text-white shadow-soft lg:col-span-7">
               <img src={showcase[0].image} alt={showcase[0].title} className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-950/88 via-forest-950/18 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
@@ -134,8 +134,8 @@ export default function HomePage() {
             </article>
             <div className="grid gap-4 sm:grid-cols-2 lg:col-span-5 lg:grid-cols-1">
               {showcase.slice(1).map((item) => (
-                <article key={item.title} className="group grid min-h-48 grid-cols-[0.94fr_1.06fr] overflow-hidden rounded-lg border border-forest-900/10 bg-ivory shadow-[0_16px_54px_rgba(7,21,16,0.08)]">
-                  <img src={item.image} alt={item.title} className="h-full min-h-48 w-full object-cover transition duration-700 group-hover:scale-[1.03]" />
+                <article key={item.title} className="group grid min-h-32 sm:min-h-48 grid-cols-[0.94fr_1.06fr] overflow-hidden rounded-lg border border-forest-900/10 bg-ivory shadow-[0_16px_54px_rgba(7,21,16,0.08)]">
+                  <img src={item.image} alt={item.title} className="h-full min-h-32 sm:min-h-48 w-full object-cover transition duration-700 group-hover:scale-[1.03]" />
                   <div className="flex flex-col justify-end p-5">
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-700">{item.tone}</p>
                     <h3 className="mt-3 font-display text-2xl font-semibold leading-tight text-forest-950">{item.title}</h3>
@@ -172,7 +172,8 @@ export default function HomePage() {
             <SectionHeading eyebrow="Signature products" title="Comfort pieces that feel ready for a real home." description="Explore popular sofa directions, upholstery moods and seating layouts before starting a quotation." />
             <Link className="btn-ghost" to="/catalogue">Open full catalogue</Link>
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <p className="mt-4 text-xs text-forest-900/60 sm:hidden">Swipe to explore designs →</p>
+          <div className="mobile-card-rail mt-6 sm:mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {featuredProducts.slice(0, 8).map((product) => <ProductCard key={product.id} product={product} />)}
           </div>
         </div>
@@ -192,15 +193,15 @@ export default function HomePage() {
             <p className="mt-5 leading-8 text-white/70">
               Customers do not only buy a sofa shape. They compare how the lounge fills the room, how the headrest sits, where the chaise lands and whether the finish feels calm after everyday use.
             </p>
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-8">
               {["Thoughtful proportions", "Comfortable back support", "Durable upholstery options", "Custom production", "Room-aware chaise placement", "Direct quotation flow"].map((item) => (
                 <div key={item} className="rounded-lg border border-white/10 bg-white/5 p-4">{item}</div>
               ))}
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <img src={clientImage("30")} alt="Ivory sectional sofa with quilted side detail" className="h-full min-h-96 rounded-lg object-cover" />
-            <img src={clientImage("19")} alt="Ivory sectional living room with centre table" className="mt-12 h-full min-h-96 rounded-lg object-cover" />
+            <img src={clientImage("30")} alt="Ivory sectional sofa with quilted side detail" className="h-48 w-full rounded-lg object-cover sm:h-full sm:min-h-96" />
+            <img src={clientImage("19")} alt="Ivory sectional living room with centre table" className="mt-4 sm:mt-12 h-48 w-full rounded-lg object-cover sm:h-full sm:min-h-96" />
           </div>
         </div>
       </section>
@@ -220,7 +221,7 @@ export default function HomePage() {
       <section className="bg-ivory py-20">
         <div className="luxury-shell">
           <SectionHeading eyebrow="Manufacturing process" title="From requirement to delivery coordination." />
-          <div className="mt-10 grid gap-4 md:grid-cols-4">
+          <div className="home-process mt-6 sm:mt-10 grid grid-cols-2 gap-3 md:grid-cols-4">
             {["Requirement consultation", "Space and measurement review", "Design and configuration", "Material selection", "Frame and structure production", "Upholstery and finishing", "Quality inspection", "Delivery coordination"].map((step, index) => (
               <div key={step} className="rounded-lg bg-white p-5 shadow-soft">
                 <span className="text-sm font-semibold text-gold-500">0{index + 1}</span>
@@ -258,7 +259,7 @@ export default function HomePage() {
               className="absolute inset-0 h-full w-full object-cover object-center opacity-76"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-forest-950 via-forest-950/78 to-forest-950/18" />
-            <div className="relative flex min-h-[430px] items-end p-6 sm:min-h-[440px] sm:p-8 lg:min-h-[470px] lg:p-14">
+            <div className="relative flex min-h-[340px] items-end p-6 sm:min-h-[260px] sm:min-h-[440px] sm:p-8 lg:min-h-[470px] lg:p-14">
               <div className="max-w-2xl">
                 <p className="eyebrow">Custom project</p>
                 <h2 className="mt-3 font-display text-4xl font-semibold leading-[0.96] sm:text-5xl lg:text-6xl">Have a Sofa Designed Around Your Space</h2>
@@ -274,6 +275,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

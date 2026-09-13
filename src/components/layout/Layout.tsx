@@ -15,7 +15,7 @@ export function Layout({ children }: { children: ReactNode }) {
   const [searchOpen, setSearchOpen] = useState(false);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
+    if (window.matchMedia("(prefers-reduced-motion: reduce), (pointer: coarse), (max-width: 639px)").matches) return undefined;
     const lenis = new Lenis({ duration: 0.9, smoothWheel: true });
     let frame = 0;
     const raf = (time: number) => {

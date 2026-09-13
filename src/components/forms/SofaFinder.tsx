@@ -12,7 +12,7 @@ const steps = [
 
 export function SofaFinder() {
   const [answers, setAnswers] = useState<Record<string, string>>({});
-  const activeIndex = Math.min(Object.keys(answers).length, steps.length - 1);
+  const [activeIndex, setActiveIndex] = useState(0);
   const recommendations = useMemo(() => recommendProducts(products, answers), [answers]);
 
   return (
@@ -24,15 +24,17 @@ export function SofaFinder() {
           <div className="mt-8 space-y-6">
             {steps.map((step, index) => (
               <div key={step.key} className={index === activeIndex ? "opacity-100" : "opacity-55"}>
-                <p className="text-sm font-semibold text-gold-100">Step {index + 1}</p>
-                <h4 className="mt-1 text-lg font-semibold">{step.question}</h4>
-                <div className="mt-3 flex flex-wrap gap-2">
+                <button type="button" className="w-full min-h-11 text-left" aria-expanded={index === activeIndex} aria-controls={`finder-step-${step.key}`} onClick={() => setActiveIndex(index)}>
+                  <span className="text-sm font-semibold text-gold-100">Step {index + 1}{answers[step.key] ? ` · ${answers[step.key]}` : ""}</span>
+                  <span className="mt-1 block text-lg font-semibold">{step.question}</span>
+                </button>
+                <div id={`finder-step-${step.key}`} className={`mt-3 flex-wrap gap-2 ${index === activeIndex ? "flex" : "hidden sm:flex"}`}>
                   {step.options.map((option) => (
                     <button
                       key={option}
                       className={`rounded-full border px-4 py-2 text-sm transition ${answers[step.key] === option ? "border-gold-300 bg-gold-300 text-forest-950" : "border-white/15 text-white/75 hover:border-gold-300"}`}
                       type="button"
-                      onClick={() => setAnswers((current) => ({ ...current, [step.key]: option }))}
+                      onClick={() => { setAnswers((current) => ({ ...current, [step.key]: option })); setActiveIndex(Math.min(index + 1, steps.length - 1)); }}
                     >
                       {option}
                     </button>
@@ -43,7 +45,7 @@ export function SofaFinder() {
           </div>
           <p className="mt-6 text-xs text-white/55">Final specifications are confirmed during quotation.</p>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="mobile-card-rail grid gap-4 sm:grid-cols-2">
           {recommendations.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

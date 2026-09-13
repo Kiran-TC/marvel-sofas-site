@@ -1,3 +1,4 @@
+import { BrandMark } from "../common/BrandMark";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { business, isPlaceholderContact } from "../../config/business";
@@ -8,7 +9,7 @@ export function Footer() {
     <footer className="bg-forest-950 text-white">
       <div className="luxury-shell grid gap-10 py-16 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr]">
         <div>
-          <img src={business.logo} alt={`${business.brandName} logo`} className="h-20 w-40 rounded-lg object-cover" />
+          <BrandMark title={`${business.brandName} logo`} className="h-20 w-20" />
           <p className="mt-6 max-w-sm text-sm leading-7 text-white/68">
             Premium sofas, sectionals and custom furniture manufactured by SLV Industry's for homes that need comfort with a polished finish.
           </p>
