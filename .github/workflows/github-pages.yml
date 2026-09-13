@@ -29,7 +29,13 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm ci > /tmp/npm-install.log 2>&1 || {
+            cat /tmp/npm-install.log
+            python3 -c 'from pathlib import Path; text=Path("/tmp/npm-install.log").read_text(); print("::error::" + text.replace("%", "%25").replace("\n", "%0A").replace("\r", "%0D"))'
+            exit 1
+          }
+          cat /tmp/npm-install.log
 
       - name: Build
         run: npm run build
